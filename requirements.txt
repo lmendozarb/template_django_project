@@ -1,0 +1,9 @@
+Django==2.2.14
+djangorestframework==3.9.4
+django-extras==0.3
+Pillow==7.1.0
+pycparser==2.20
+WeasyPrint==51
+psycopg2==2.8.3
+culqipy==0.2.6
+gunicorn==19.9.0
