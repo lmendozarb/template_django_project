@@ -7,3 +7,4 @@ WeasyPrint==51
 psycopg2==2.8.3
 culqipy==0.2.6
 gunicorn==19.9.0
+django-phonenumber-field==2.3.0
