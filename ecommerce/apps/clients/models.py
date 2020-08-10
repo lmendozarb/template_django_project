@@ -23,10 +23,10 @@ class Client(models.Model):
         verbose_name_plural = 'Clientes'
 
     def __str__(self):
-        return "%s" % (self.bussines_name)
+        return f"{self.bussines_name}"
 
 class Contact(models.Model):
-    client = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name=_("Cliente"))
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name=("Cliente"))
     name = models.CharField("Nombre del Contacto", max_length=255)
     mobile_phone = PhoneNumberField("Numero del movil")
     email = models.EmailField("Correo")
@@ -39,8 +39,8 @@ class Contact(models.Model):
     update_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = 'CLiente'
-        verbose_name_plural = 'Clientes'
+        verbose_name = 'Contacto'
+        verbose_name_plural = 'Contactos'
 
     def __str__(self):
-        return "%s" % (self.name)
+        return f"{self.name}"
