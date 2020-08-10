@@ -1,3 +1,6 @@
 from django.contrib import admin
+from ecommerce.apps.clients.models import Client
+from ecommerce.apps.clients.models import Contact
 
-# Register your models here.
+admin.site.register(Client)
+admin.site.register(Contact)
