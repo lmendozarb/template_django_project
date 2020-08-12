@@ -8,15 +8,22 @@ class Client(models.Model):
         (1,"Persona Jurídica"),
         (2,"Persona Natural con Negocio"),
         (3,"Persona Natural sin Negocio"),
-    )
+        )
+    DOCUMENT_CHOICES = (
+        (1,"RUC"),
+        (2,"DNI"),
+        )
     bussines_name = models.CharField("Razón Social", max_length=255)
     commercial_name = models.CharField("Nombre Comercial", max_length=255)
     website = models.URLField("Sitio Web", blank=True, null=True)
     email = models.EmailField("Correo", blank=True, null=True)
-    type_person = models.IntegerField(choices=STATUS_CHOICES)
+    type_person = models.IntegerField(choices=STATUS_CHOICES, default=1)
     #user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    RUC = models.CharField("RUC", max_length=15, default="")
     addres = models.CharField("Dirección Fiscal", max_length=255)
+    document_type = models.IntegerField(choices=DOCUMENT_CHOICES,default=1)
+    number_document = models.CharField("Número de Documento", max_length=20, default="",
+    blank=True, null=True)
+
 
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
@@ -86,11 +93,11 @@ class Bankaccount(models.Model):
         (3,"Otros"),
     )
 
-    bank_id = models.IntegerField("Banco", choices=BANK_CHOICES)
+    bank_id = models.IntegerField("Banco", choices=BANK_CHOICES, default=1)
     type_account = models.IntegerField("Tipo de Cuenta", choices=ACCOUNT_CHOICES)
     currency_id = models.IntegerField("Tipo de moneda", choices=CURRENCY_CHOICES)
     status = models.IntegerField("Estado", choices=STATUS_CHOICES)
-    CCI_number = models.IntegerField("Cuenta Interbancaria", max_length=20)
+    CCI_number = models.IntegerField("Cuenta Interbancaria")
 
     class Meta:
         verbose_name = 'Banco'
