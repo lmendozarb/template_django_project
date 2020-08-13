@@ -94,9 +94,9 @@ class Bankaccount(models.Model):
     )
 
     bank_id = models.IntegerField("Banco", choices=BANK_CHOICES, default=1)
-    type_account = models.IntegerField("Tipo de Cuenta", choices=ACCOUNT_CHOICES)
-    currency_id = models.IntegerField("Tipo de moneda", choices=CURRENCY_CHOICES)
-    status = models.IntegerField("Estado", choices=STATUS_CHOICES)
+    type_account = models.IntegerField("Tipo de Cuenta", choices=ACCOUNT_CHOICES, default=1)
+    currency_id = models.IntegerField("Tipo de moneda", choices=CURRENCY_CHOICES, default=1)
+    status = models.IntegerField("Estado", choices=STATUS_CHOICES, default=1)
     CCI_number = models.IntegerField("Cuenta Interbancaria")
 
     class Meta:
