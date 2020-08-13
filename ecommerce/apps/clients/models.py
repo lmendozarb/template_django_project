@@ -2,6 +2,7 @@ from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
 
+
 # Create your models here.
 class Client(models.Model):
     STATUS_CHOICES = (
@@ -9,10 +10,12 @@ class Client(models.Model):
         (2,"Persona Natural con Negocio"),
         (3,"Persona Natural sin Negocio"),
         )
+
     DOCUMENT_CHOICES = (
         (1,"RUC"),
         (2,"DNI"),
         )
+
     bussines_name = models.CharField("Razón Social", max_length=255)
     commercial_name = models.CharField("Nombre Comercial", max_length=255)
     website = models.URLField("Sitio Web", blank=True, null=True)
@@ -23,8 +26,6 @@ class Client(models.Model):
     document_type = models.IntegerField(choices=DOCUMENT_CHOICES,default=1)
     number_document = models.CharField("Número de Documento", max_length=20, default="",
     blank=True, null=True)
-
-
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
@@ -36,9 +37,9 @@ class Client(models.Model):
         return f"{self.bussines_name}"
 
 class Contact(models.Model):
-
     client = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name=("Cliente"))
     prefix = models.CharField("Prenombre", max_length=50, null=True, blank=True, default="")
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name=("Cliente"))
     name = models.CharField("Nombre del Contacto", max_length=255)
     mobile_phone = PhoneNumberField("Numero del movil")
     email = models.EmailField("Correo")
@@ -50,12 +51,15 @@ class Contact(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
+
     class Meta:
         verbose_name = 'Contacto'
         verbose_name_plural = 'Contactos'
 
     def __str__(self):
         return f"{self.name}"
+
+
 
 class Bankaccount(models.Model):
 

@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'ecommerce.apps.providers',
     'ecommerce.apps.services',
     'ecommerce.apps.warehouse',
-]
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
