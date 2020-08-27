@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ecommerce.apps.clients',
-]
+    'ecommerce.apps.providers',
+    'ecommerce.apps.services',
+    'ecommerce.apps.warehouse',
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
