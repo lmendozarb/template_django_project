@@ -31,3 +31,12 @@ Stop
 In the project root, execute the next command::
 
     docker-compose down
+
+Pre commit
+---
+Execute the next commad the first time to install pre commit::
+    pre-commit install
+
+Later , the next comment::
+
+    pre-commit run --all-files
