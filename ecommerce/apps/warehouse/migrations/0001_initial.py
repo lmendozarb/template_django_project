@@ -7,61 +7,98 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Category',
+            name="Category",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, verbose_name='Nombre')),
-                ('slug', models.SlugField(max_length=100, verbose_name='Slug')),
-                ('description', models.TextField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255, verbose_name="Nombre")),
+                ("slug", models.SlugField(max_length=100, verbose_name="Slug")),
+                ("description", models.TextField()),
             ],
             options={
-                'verbose_name': 'Categoría',
-                'verbose_name_plural': 'Categorías',
+                "verbose_name": "Categoría",
+                "verbose_name_plural": "Categorías",
             },
         ),
         migrations.CreateModel(
-            name='Tags',
+            name="Tags",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, verbose_name='Nombre')),
-                ('slug', models.SlugField(max_length=100, verbose_name='Slug')),
-                ('description', models.TextField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255, verbose_name="Nombre")),
+                ("slug", models.SlugField(max_length=100, verbose_name="Slug")),
+                ("description", models.TextField()),
             ],
             options={
-                'verbose_name': 'Etiqueta',
-                'verbose_name_plural': 'Etiquetas',
+                "verbose_name": "Etiqueta",
+                "verbose_name_plural": "Etiquetas",
             },
         ),
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('product_name', models.CharField(max_length=255, verbose_name='Nombre del Producto')),
-                ('sku', models.CharField(max_length=255, verbose_name='SKU')),
-                ('short_description', models.CharField(max_length=50, verbose_name='Descripción Corta')),
-                ('long_description', models.CharField(max_length=255, verbose_name='Descripción')),
-                ('regular_price', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('sales_prices', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('sold_individually', models.CharField(max_length=255)),
-                ('weight', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('lenght', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('width', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('height', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('purchase_note', models.CharField(max_length=255, verbose_name='Nota de Compra')),
-                ('product_image1', models.ImageField(upload_to='')),
-                ('product_image2', models.ImageField(upload_to='')),
-                ('product_image3', models.ImageField(upload_to='')),
-                ('category', models.ManyToManyField(to='warehouse.Category')),
-                ('tags', models.ManyToManyField(to='warehouse.Tags')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "product_name",
+                    models.CharField(
+                        max_length=255, verbose_name="Nombre del Producto"
+                    ),
+                ),
+                ("sku", models.CharField(max_length=255, verbose_name="SKU")),
+                (
+                    "short_description",
+                    models.CharField(max_length=50, verbose_name="Descripción Corta"),
+                ),
+                (
+                    "long_description",
+                    models.CharField(max_length=255, verbose_name="Descripción"),
+                ),
+                ("regular_price", models.DecimalField(decimal_places=2, max_digits=10)),
+                ("sales_prices", models.DecimalField(decimal_places=2, max_digits=10)),
+                ("sold_individually", models.CharField(max_length=255)),
+                ("weight", models.DecimalField(decimal_places=2, max_digits=10)),
+                ("lenght", models.DecimalField(decimal_places=2, max_digits=10)),
+                ("width", models.DecimalField(decimal_places=2, max_digits=10)),
+                ("height", models.DecimalField(decimal_places=2, max_digits=10)),
+                (
+                    "purchase_note",
+                    models.CharField(max_length=255, verbose_name="Nota de Compra"),
+                ),
+                ("product_image1", models.ImageField(upload_to="")),
+                ("product_image2", models.ImageField(upload_to="")),
+                ("product_image3", models.ImageField(upload_to="")),
+                ("category", models.ManyToManyField(to="warehouse.Category")),
+                ("tags", models.ManyToManyField(to="warehouse.Tags")),
             ],
             options={
-                'verbose_name': 'Producto',
-                'verbose_name_plural': 'Productos',
+                "verbose_name": "Producto",
+                "verbose_name_plural": "Productos",
             },
         ),
     ]

@@ -6,63 +6,75 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('warehouse', '0001_initial'),
+        ("warehouse", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='category',
-            name='thumbnail',
-            field=models.ImageField(default='', upload_to='Category/'),
+            model_name="category",
+            name="thumbnail",
+            field=models.ImageField(default="", upload_to="Category/"),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='height',
-            field=models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Alto'),
+            model_name="product",
+            name="height",
+            field=models.DecimalField(
+                decimal_places=2, max_digits=10, verbose_name="Alto"
+            ),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='lenght',
-            field=models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Largo'),
+            model_name="product",
+            name="lenght",
+            field=models.DecimalField(
+                decimal_places=2, max_digits=10, verbose_name="Largo"
+            ),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='product_image1',
-            field=models.ImageField(upload_to='Product/'),
+            model_name="product",
+            name="product_image1",
+            field=models.ImageField(upload_to="Product/"),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='product_image2',
-            field=models.ImageField(upload_to='Product/'),
+            model_name="product",
+            name="product_image2",
+            field=models.ImageField(upload_to="Product/"),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='product_image3',
-            field=models.ImageField(upload_to='Product/'),
+            model_name="product",
+            name="product_image3",
+            field=models.ImageField(upload_to="Product/"),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='regular_price',
-            field=models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Precio Regular'),
+            model_name="product",
+            name="regular_price",
+            field=models.DecimalField(
+                decimal_places=2, max_digits=10, verbose_name="Precio Regular"
+            ),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='sales_prices',
-            field=models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Precio de Venta'),
+            model_name="product",
+            name="sales_prices",
+            field=models.DecimalField(
+                decimal_places=2, max_digits=10, verbose_name="Precio de Venta"
+            ),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='sold_individually',
-            field=models.CharField(max_length=255, verbose_name='Venta Individual'),
+            model_name="product",
+            name="sold_individually",
+            field=models.CharField(max_length=255, verbose_name="Venta Individual"),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='weight',
-            field=models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Peso'),
+            model_name="product",
+            name="weight",
+            field=models.DecimalField(
+                decimal_places=2, max_digits=10, verbose_name="Peso"
+            ),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='width',
-            field=models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Ancho'),
+            model_name="product",
+            name="width",
+            field=models.DecimalField(
+                decimal_places=2, max_digits=10, verbose_name="Ancho"
+            ),
         ),
     ]

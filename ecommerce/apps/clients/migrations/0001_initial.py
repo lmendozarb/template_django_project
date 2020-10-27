@@ -7,26 +7,59 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Client',
+            name="Client",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('bussines_name', models.CharField(max_length=255, verbose_name='Razón Social')),
-                ('commercial_name', models.CharField(max_length=255, verbose_name='Nombre Comercial')),
-                ('website', models.URLField(blank=True, null=True, verbose_name='Sitio Web')),
-                ('email', models.EmailField(blank=True, max_length=254, null=True, verbose_name='Correo')),
-                ('type_person', models.IntegerField(choices=[(1, 'Persona Jurídica'), (2, 'Persona Natural con Negocio'), (3, 'Persona Natural sin Negocio')])),
-                ('addres', models.CharField(max_length=255, verbose_name='Dirección Fiscal')),
-                ('create_at', models.DateTimeField(auto_now_add=True)),
-                ('update_at', models.DateTimeField(auto_now=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "bussines_name",
+                    models.CharField(max_length=255, verbose_name="Razón Social"),
+                ),
+                (
+                    "commercial_name",
+                    models.CharField(max_length=255, verbose_name="Nombre Comercial"),
+                ),
+                (
+                    "website",
+                    models.URLField(blank=True, null=True, verbose_name="Sitio Web"),
+                ),
+                (
+                    "email",
+                    models.EmailField(
+                        blank=True, max_length=254, null=True, verbose_name="Correo"
+                    ),
+                ),
+                (
+                    "type_person",
+                    models.IntegerField(
+                        choices=[
+                            (1, "Persona Jurídica"),
+                            (2, "Persona Natural con Negocio"),
+                            (3, "Persona Natural sin Negocio"),
+                        ]
+                    ),
+                ),
+                (
+                    "addres",
+                    models.CharField(max_length=255, verbose_name="Dirección Fiscal"),
+                ),
+                ("create_at", models.DateTimeField(auto_now_add=True)),
+                ("update_at", models.DateTimeField(auto_now=True)),
             ],
             options={
-                'verbose_name': 'Cliente',
-                'verbose_name_plural': 'Clientes',
+                "verbose_name": "Cliente",
+                "verbose_name_plural": "Clientes",
             },
         ),
     ]

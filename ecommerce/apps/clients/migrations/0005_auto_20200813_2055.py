@@ -6,23 +6,35 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('clients', '0004_auto_20200812_1931'),
+        ("clients", "0004_auto_20200812_1931"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='bankaccount',
-            name='currency_id',
-            field=models.IntegerField(choices=[(1, 'PEN'), (2, 'USD')], default=1, verbose_name='Tipo de moneda'),
+            model_name="bankaccount",
+            name="currency_id",
+            field=models.IntegerField(
+                choices=[(1, "PEN"), (2, "USD")],
+                default=1,
+                verbose_name="Tipo de moneda",
+            ),
         ),
         migrations.AlterField(
-            model_name='bankaccount',
-            name='status',
-            field=models.IntegerField(choices=[(1, 'Activo'), (2, 'Inactivo'), (3, 'Otros')], default=1, verbose_name='Estado'),
+            model_name="bankaccount",
+            name="status",
+            field=models.IntegerField(
+                choices=[(1, "Activo"), (2, "Inactivo"), (3, "Otros")],
+                default=1,
+                verbose_name="Estado",
+            ),
         ),
         migrations.AlterField(
-            model_name='bankaccount',
-            name='type_account',
-            field=models.IntegerField(choices=[(1, 'Crédito'), (2, 'Débito')], default=1, verbose_name='Tipo de Cuenta'),
+            model_name="bankaccount",
+            name="type_account",
+            field=models.IntegerField(
+                choices=[(1, "Crédito"), (2, "Débito")],
+                default=1,
+                verbose_name="Tipo de Cuenta",
+            ),
         ),
     ]

@@ -9,44 +9,106 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Providers',
+            name="Providers",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('business_name', models.CharField(max_length=255, verbose_name='Razón Social')),
-                ('document_type', models.IntegerField(choices=[(1, 'DNI'), (2, 'RUC')], default=1, verbose_name='Tipo de Documento')),
-                ('nr_document', models.CharField(blank=True, default='', max_length=20, null=True, verbose_name='Número de Documento')),
-                ('adress', models.CharField(max_length=255)),
-                ('phone', phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None, verbose_name='Número del Movil')),
-                ('email', models.EmailField(max_length=254, verbose_name='Correo')),
-                ('website', models.URLField(blank=True, null=True, verbose_name='Sitio Web')),
-                ('favorite_provider', models.BooleanField()),
-                ('info', models.TextField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "business_name",
+                    models.CharField(max_length=255, verbose_name="Razón Social"),
+                ),
+                (
+                    "document_type",
+                    models.IntegerField(
+                        choices=[(1, "DNI"), (2, "RUC")],
+                        default=1,
+                        verbose_name="Tipo de Documento",
+                    ),
+                ),
+                (
+                    "nr_document",
+                    models.CharField(
+                        blank=True,
+                        default="",
+                        max_length=20,
+                        null=True,
+                        verbose_name="Número de Documento",
+                    ),
+                ),
+                ("adress", models.CharField(max_length=255)),
+                (
+                    "phone",
+                    phonenumber_field.modelfields.PhoneNumberField(
+                        max_length=128, region=None, verbose_name="Número del Movil"
+                    ),
+                ),
+                ("email", models.EmailField(max_length=254, verbose_name="Correo")),
+                (
+                    "website",
+                    models.URLField(blank=True, null=True, verbose_name="Sitio Web"),
+                ),
+                ("favorite_provider", models.BooleanField()),
+                ("info", models.TextField()),
             ],
             options={
-                'verbose_name': 'Proveedor',
-                'verbose_name_plural': 'Proveedores',
+                "verbose_name": "Proveedor",
+                "verbose_name_plural": "Proveedores",
             },
         ),
         migrations.CreateModel(
-            name='ProvidersContact',
+            name="ProvidersContact",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, verbose_name='Nombre del Contacto')),
-                ('mobile_phone', phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None, verbose_name='Número del Movil')),
-                ('email', models.EmailField(max_length=254, verbose_name='Correo')),
-                ('position', models.CharField(max_length=255, verbose_name='Posicion')),
-                ('info', models.TextField()),
-                ('is_principal', models.CharField(max_length=255, verbose_name='Principal')),
-                ('provider', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='providers.Providers', verbose_name='Proveedor')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(
+                        max_length=255, verbose_name="Nombre del Contacto"
+                    ),
+                ),
+                (
+                    "mobile_phone",
+                    phonenumber_field.modelfields.PhoneNumberField(
+                        max_length=128, region=None, verbose_name="Número del Movil"
+                    ),
+                ),
+                ("email", models.EmailField(max_length=254, verbose_name="Correo")),
+                ("position", models.CharField(max_length=255, verbose_name="Posicion")),
+                ("info", models.TextField()),
+                (
+                    "is_principal",
+                    models.CharField(max_length=255, verbose_name="Principal"),
+                ),
+                (
+                    "provider",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="providers.Providers",
+                        verbose_name="Proveedor",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Contacto',
-                'verbose_name_plural': 'Contactos',
+                "verbose_name": "Contacto",
+                "verbose_name_plural": "Contactos",
             },
         ),
     ]

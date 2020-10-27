@@ -9,3 +9,4 @@ culqipy==0.2.6
 gunicorn==19.9.0
 django-phonenumber-field==2.3.0
 phonenumbers==8.12.6
+pre-commit==2.7.1

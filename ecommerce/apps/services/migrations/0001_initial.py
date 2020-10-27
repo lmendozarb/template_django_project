@@ -7,32 +7,66 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Shipping',
+            name="Shipping",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('zone_name', models.CharField(max_length=250, verbose_name='Nombre de Zona')),
-                ('shipping_method', models.IntegerField(choices=[(1, 'Tarifa Plana'), (2, 'Envio Gratis'), (3, 'Recojo en Local')], default=1)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "zone_name",
+                    models.CharField(max_length=250, verbose_name="Nombre de Zona"),
+                ),
+                (
+                    "shipping_method",
+                    models.IntegerField(
+                        choices=[
+                            (1, "Tarifa Plana"),
+                            (2, "Envio Gratis"),
+                            (3, "Recojo en Local"),
+                        ],
+                        default=1,
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Envío',
-                'verbose_name_plural': 'Envíos',
+                "verbose_name": "Envío",
+                "verbose_name_plural": "Envíos",
             },
         ),
         migrations.CreateModel(
-            name='ShippingConfigure',
+            name="ShippingConfigure",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('enable_shipping_calculator', models.BooleanField(verbose_name='Habilitar Calculadora de Envío')),
-                ('hidden_shipping_prices', models.BooleanField(verbose_name='Ocultar Calculadora de Envío')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "enable_shipping_calculator",
+                    models.BooleanField(verbose_name="Habilitar Calculadora de Envío"),
+                ),
+                (
+                    "hidden_shipping_prices",
+                    models.BooleanField(verbose_name="Ocultar Calculadora de Envío"),
+                ),
             ],
             options={
-                'verbose_name': 'Configuracion de Envío',
-                'verbose_name_plural': 'Configuracion de Envíos',
+                "verbose_name": "Configuracion de Envío",
+                "verbose_name_plural": "Configuracion de Envíos",
             },
         ),
     ]
