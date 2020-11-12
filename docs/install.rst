@@ -13,16 +13,17 @@ Run
 
 Execute the next command to start web and database service::
 
-    docker-compose up --build
+    docker-compose -f local.yml build
+    docker-compose -f local.yml up
 
 
 Connect to Docker Container::
 
-    docker-compose exec web bash
+    docker-compose exec django bash
 
 Run Management Command::
 
-    docker-compose run web python3 ./manage.py <command>
+    docker-compose -f local.yml run --rm django python3 manage.py <command>
 
 
 Stop

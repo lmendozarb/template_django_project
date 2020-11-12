@@ -1,0 +1,9 @@
+# Redis
+REDIS_URL=redis://redis:6379/0
+
+# Flower
+CELERY_FLOWER_USER=AkSCzUUkrubMopHkMlHHIiFnUzKhIidG
+CELERY_FLOWER_PASSWORD=jspxQGdwrs9VbGLmn5FmXRAGqNt5D6osRgqggNJl1JgcdcCYZdCf7Ch0jcgG0nH7
+
+# django
+SECRET_KEY=n4erl@wnya+b1x4+osm7ie&9@5r@_e0=ey_4cd(9)lym4+5n2f
